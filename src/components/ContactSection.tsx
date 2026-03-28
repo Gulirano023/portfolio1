@@ -16,7 +16,7 @@ const ContactSection = () => {
       toast({ title: "Please fill in all fields", variant: "destructive" });
       return;
     }
-    toast({ title: "Message sent!", description: "Thanks for reaching out. I'll get back to you soon." });
+    toast({ title: "Message sent! ✨", description: "Thanks for reaching out. I'll get back to you soon." });
     setForm({ name: "", email: "", message: "" });
   };
 
@@ -37,7 +37,7 @@ const ContactSection = () => {
       >
         <p className="text-sm font-medium tracking-widest uppercase text-primary mb-2">Contact</p>
         <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
-          Let's work together.
+          Let's connect.
         </h2>
       </motion.div>
 
@@ -54,7 +54,7 @@ const ContactSection = () => {
             placeholder="Your name"
             value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
-            className="rounded-xl bg-secondary border-0 font-body"
+            className="rounded-xl bg-secondary border-0 font-body focus:ring-2 focus:ring-primary/30"
             maxLength={100}
           />
           <Input
@@ -62,7 +62,7 @@ const ContactSection = () => {
             placeholder="Your email"
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
-            className="rounded-xl bg-secondary border-0 font-body"
+            className="rounded-xl bg-secondary border-0 font-body focus:ring-2 focus:ring-primary/30"
             maxLength={255}
           />
           <Textarea
@@ -70,7 +70,7 @@ const ContactSection = () => {
             rows={5}
             value={form.message}
             onChange={(e) => setForm({ ...form, message: e.target.value })}
-            className="rounded-xl bg-secondary border-0 resize-none font-body"
+            className="rounded-xl bg-secondary border-0 resize-none font-body focus:ring-2 focus:ring-primary/30"
             maxLength={1000}
           />
           <Button type="submit" size="lg" className="rounded-full px-8 font-body">
@@ -90,11 +90,12 @@ const ContactSection = () => {
               <Mail size={18} className="text-primary" />
               <span className="text-sm font-medium text-foreground">Email</span>
             </div>
-            <a href="mailto:hello@alexmorgan.dev" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              hello@alexmorgan.dev
+            <a href="mailto:gulirano@example.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              gulirano@example.com
             </a>
           </div>
 
+          <p className="text-sm text-muted-foreground mb-3">Find me on social media</p>
           <div className="flex gap-3">
             {socials.map((s) => (
               <a
@@ -103,7 +104,7 @@ const ContactSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="w-11 h-11 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
+                className="w-11 h-11 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200"
               >
                 <s.icon size={18} />
               </a>

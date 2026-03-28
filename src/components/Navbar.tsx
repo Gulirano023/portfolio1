@@ -46,7 +46,7 @@ const Navbar = () => {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="font-heading text-xl font-semibold text-foreground">
-          Portfolio<span className="text-primary">.</span>
+          Gulirano<span className="text-primary">.</span>
         </a>
 
         {/* Desktop */}
@@ -55,14 +55,14 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
             >
               {link.label}
             </a>
           ))}
           <button
             onClick={toggleDark}
-            className="p-2 rounded-full bg-secondary text-secondary-foreground hover:bg-muted transition-colors"
+            className="p-2 rounded-full bg-secondary text-secondary-foreground hover:bg-primary/10 hover:text-primary transition-colors"
             aria-label="Toggle theme"
           >
             {dark ? <Sun size={16} /> : <Moon size={16} />}
@@ -94,7 +94,7 @@ const Navbar = () => {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-1"
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-1"
                 >
                   {link.label}
                 </a>

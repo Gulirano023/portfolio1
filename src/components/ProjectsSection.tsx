@@ -4,37 +4,37 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-featured online store with cart, checkout, and payment integration. Built for speed and conversion.",
-    tech: ["React", "TypeScript", "Stripe", "Tailwind CSS"],
+    title: "Portfolio Website",
+    description: "A sleek personal portfolio showcasing my work, skills, and journey as a developer. Fully responsive with dark mode and smooth animations.",
+    tech: ["React", "Tailwind CSS", "Framer Motion"],
     demo: "#",
     github: "#",
   },
   {
-    title: "Task Management App",
-    description: "Real-time collaborative task board with drag-and-drop, assignments, and deadline tracking.",
-    tech: ["Next.js", "PostgreSQL", "WebSockets", "Prisma"],
+    title: "Weather Dashboard",
+    description: "Real-time weather application with city search, 5-day forecast, and dynamic backgrounds based on conditions.",
+    tech: ["JavaScript", "OpenWeather API", "CSS"],
     demo: "#",
     github: "#",
   },
   {
-    title: "AI Writing Assistant",
-    description: "An intelligent content editor leveraging GPT models for grammar, tone, and style suggestions.",
-    tech: ["React", "OpenAI API", "Node.js", "MongoDB"],
+    title: "Task Tracker",
+    description: "A clean and intuitive to-do list app with task categories, completion tracking, and local storage persistence.",
+    tech: ["React", "CSS Modules", "LocalStorage"],
     demo: "#",
     github: "#",
   },
   {
-    title: "Finance Dashboard",
-    description: "Interactive analytics dashboard with real-time charts, budgeting tools, and expense tracking.",
-    tech: ["React", "D3.js", "Firebase", "Tailwind CSS"],
+    title: "Landing Page Collection",
+    description: "A series of modern, responsive landing pages for fictional brands — focusing on layout, typography, and visual hierarchy.",
+    tech: ["HTML", "CSS", "JavaScript"],
     demo: "#",
     github: "#",
   },
   {
-    title: "Social Media Scheduler",
-    description: "Cross-platform content scheduling tool with analytics and team collaboration features.",
-    tech: ["TypeScript", "Node.js", "Redis", "React"],
+    title: "Quiz App",
+    description: "An interactive quiz game with multiple categories, score tracking, and timed questions for a fun learning experience.",
+    tech: ["React", "Trivia API", "Tailwind CSS"],
     demo: "#",
     github: "#",
   },
@@ -76,19 +76,19 @@ const ProjectsSection = () => (
               {project.tech.map((t) => (
                 <span
                   key={t}
-                  className="text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground font-medium"
+                  className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium"
                 >
                   {t}
                 </span>
               ))}
             </div>
             <div className="flex gap-3">
-              <Button asChild variant="outline" size="sm" className="rounded-full font-body">
+              <Button asChild variant="outline" size="sm" className="rounded-full font-body border-primary/30 hover:bg-primary/5">
                 <a href={project.demo} target="_blank" rel="noopener noreferrer">
                   <ExternalLink size={14} className="mr-1.5" /> Live Demo
                 </a>
               </Button>
-              <Button asChild variant="ghost" size="sm" className="rounded-full font-body">
+              <Button asChild variant="ghost" size="sm" className="rounded-full font-body hover:text-primary">
                 <a href={project.github} target="_blank" rel="noopener noreferrer">
                   <Github size={14} className="mr-1.5" /> Code
                 </a>
