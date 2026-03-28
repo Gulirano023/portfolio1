@@ -2,22 +2,22 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    role: "Senior Frontend Developer",
-    company: "TechCorp Inc.",
-    period: "2022 – Present",
-    description: "Leading the frontend team, building scalable React applications, and mentoring junior developers.",
-  },
-  {
-    role: "Full Stack Developer",
-    company: "StartupXYZ",
-    period: "2020 – 2022",
-    description: "Built and maintained multiple web products from scratch, handling both frontend and backend.",
+    role: "Self-Learning & Growth",
+    company: "Personal Journey",
+    period: "2023 – Present",
+    description: "Actively learning frontend development through online courses, tutorials, and hands-on projects. Building a strong foundation in HTML, CSS, JavaScript, and React.",
   },
   {
     role: "Freelance Web Developer",
-    company: "Self-employed",
-    period: "2019 – 2020",
-    description: "Delivered custom websites and web apps for small businesses and startups across various industries.",
+    company: "Independent Projects",
+    period: "2024 – Present",
+    description: "Creating responsive landing pages and small web applications for local clients. Focusing on clean code, modern design patterns, and delivering quality results.",
+  },
+  {
+    role: "Open Source Contributor",
+    company: "GitHub Community",
+    period: "2024 – Present",
+    description: "Contributing to open-source projects, collaborating with developers worldwide, and learning best practices in version control and team workflows.",
   },
 ];
 
@@ -32,13 +32,13 @@ const ExperienceSection = () => (
     >
       <p className="text-sm font-medium tracking-widest uppercase text-primary mb-2">Experience</p>
       <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
-        Where I've worked.
+        My journey.
       </h2>
     </motion.div>
 
     <div className="relative">
       {/* Timeline line */}
-      <div className="absolute left-4 md:left-6 top-0 bottom-0 w-px bg-border" />
+      <div className="absolute left-4 md:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-accent/30 to-transparent" />
 
       <div className="space-y-10">
         {experiences.map((exp, i) => (
@@ -51,7 +51,7 @@ const ExperienceSection = () => (
             className="relative pl-12 md:pl-16"
           >
             {/* Dot */}
-            <div className="absolute left-2.5 md:left-4.5 top-1.5 w-3 h-3 rounded-full bg-primary border-2 border-background" />
+            <div className="absolute left-2.5 md:left-4.5 top-1.5 w-3 h-3 rounded-full bg-primary border-2 border-background shadow-sm shadow-primary/30" />
 
             <p className="text-xs font-medium text-primary mb-1">{exp.period}</p>
             <h3 className="font-heading text-lg font-semibold text-foreground">{exp.role}</h3>
