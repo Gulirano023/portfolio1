@@ -8,6 +8,21 @@ const strengths = [
   { icon: Heart, title: "Passionate & Responsible", desc: "Dedicated to delivering results with care, meeting deadlines, and exceeding expectations." },
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.15 }
+  }
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40, scale: 0.9 },
+  visible: {
+    opacity: 1, y: 0, scale: 1,
+    transition: { duration: 0.5, type: "spring", stiffness: 100 }
+  }
+};
+
 const AboutSection = () => (
   <section id="about" className="section-container">
     <motion.div
@@ -16,37 +31,59 @@ const AboutSection = () => (
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6 }}
     >
-      <p className="text-sm font-medium tracking-widest uppercase text-primary mb-2">About Me</p>
+      <motion.p
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="text-sm font-medium tracking-widest uppercase text-primary mb-2"
+      >
+        About Me
+      </motion.p>
       <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-6">
         Passionate about design<br className="hidden md:block" /> & technology.
       </h2>
-      <p className="text-muted-foreground max-w-2xl text-lg leading-relaxed mb-12">
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="text-muted-foreground max-w-2xl text-lg leading-relaxed mb-12"
+      >
         Hello! I'm <span className="text-foreground font-medium">Gulirano Jumanazarova</span> — a passionate
         and ambitious developer who enjoys creating modern, user-friendly, and visually
         appealing digital products. I'm dedicated to continuous learning and love
         exploring the intersection of technology and design to build experiences
         that truly resonate with users.
-      </p>
+      </motion.p>
     </motion.div>
 
-    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      {strengths.map((item, i) => (
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-80px" }}
+      className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"
+    >
+      {strengths.map((item) => (
         <motion.div
           key={item.title}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5, delay: i * 0.1 }}
-          className="glass-card p-6 hover-lift group"
+          variants={cardVariants}
+          whileHover={{ y: -8, boxShadow: "0 20px 40px -15px hsl(var(--primary) / 0.15)" }}
+          className="glass-card p-6 group cursor-default"
         >
-          <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+          <motion.div
+            whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+            transition={{ duration: 0.5 }}
+            className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors"
+          >
             <item.icon size={20} className="text-primary" />
-          </div>
+          </motion.div>
           <h3 className="font-heading text-lg font-semibold text-foreground mb-2">{item.title}</h3>
           <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
         </motion.div>
       ))}
-    </div>
+    </motion.div>
   </section>
 );
 
