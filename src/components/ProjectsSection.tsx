@@ -49,7 +49,7 @@ const cardVariants = {
   hidden: { opacity: 0, y: 50, rotateX: 10 },
   visible: {
     opacity: 1, y: 0, rotateX: 0,
-    transition: { duration: 0.6, type: "spring", stiffness: 80 }
+    transition: { duration: 0.6, type: "spring" as const, stiffness: 80 }
   }
 };
 
