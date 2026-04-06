@@ -1,19 +1,21 @@
 import { useState, useEffect } from "react";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X, Languages } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [dark, setDark] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { lang, setLang, t } = useLanguage();
+
+  const navLinks = [
+    { label: t.about, href: "#about" },
+    { label: t.skills, href: "#skills" },
+    { label: t.projects, href: "#projects" },
+    { label: t.experience, href: "#experience" },
+    { label: t.contact, href: "#contact" },
+  ];
 
   useEffect(() => {
     const saved = localStorage.getItem("theme");
@@ -38,6 +40,8 @@ const Navbar = () => {
     });
   };
 
+  const toggleLang = () => setLang(lang === "uz" ? "ru" : "uz");
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -61,6 +65,14 @@ const Navbar = () => {
             </a>
           ))}
           <button
+            onClick={toggleLang}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary text-secondary-foreground hover:bg-primary/10 hover:text-primary transition-colors text-xs font-semibold uppercase tracking-wide"
+            aria-label="Toggle language"
+          >
+            <Languages size={14} />
+            {lang === "uz" ? "RU" : "UZ"}
+          </button>
+          <button
             onClick={toggleDark}
             className="p-2 rounded-full bg-secondary text-secondary-foreground hover:bg-primary/10 hover:text-primary transition-colors"
             aria-label="Toggle theme"
@@ -71,6 +83,14 @@ const Navbar = () => {
 
         {/* Mobile */}
         <div className="flex md:hidden items-center gap-2">
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-secondary text-secondary-foreground text-xs font-semibold uppercase"
+            aria-label="Toggle language"
+          >
+            <Languages size={13} />
+            {lang === "uz" ? "RU" : "UZ"}
+          </button>
           <button onClick={toggleDark} className="p-2 rounded-full bg-secondary text-secondary-foreground" aria-label="Toggle theme">
             {dark ? <Sun size={16} /> : <Moon size={16} />}
           </button>

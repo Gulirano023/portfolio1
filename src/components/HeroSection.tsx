@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Send, Sparkles, Code2, Palette, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const floatingIcons = [
   { icon: Code2, className: "absolute top-[15%] left-[8%] animate-float", delay: 0 },
@@ -10,9 +11,10 @@ const floatingIcons = [
 ];
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated gradient orbs */}
       <motion.div
         className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-primary/15 rounded-full blur-[120px] animate-pulse-glow"
         animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
@@ -25,7 +27,6 @@ const HeroSection = () => {
       />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-primary/5 rounded-full blur-[80px] animate-spin-slow" />
 
-      {/* Floating decorative icons */}
       {floatingIcons.map(({ icon: Icon, className, delay }, i) => (
         <motion.div
           key={i}
@@ -38,7 +39,6 @@ const HeroSection = () => {
         </motion.div>
       ))}
 
-      {/* Decorative dots grid */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-[0.03]">
         <div className="absolute inset-0" style={{
           backgroundImage: "radial-gradient(circle, hsl(var(--primary)) 1px, transparent 1px)",
@@ -59,7 +59,7 @@ const HeroSection = () => {
           >
             <Sparkles size={14} className="text-primary" />
           </motion.div>
-          <span className="text-sm font-medium text-primary">Creative Developer</span>
+          <span className="text-sm font-medium text-primary">{t.heroTag}</span>
         </motion.div>
 
         <motion.h1
@@ -68,14 +68,14 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.15, type: "spring", stiffness: 100 }}
           className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-tight mb-6"
         >
-          Hi, I'm{" "}
+          {t.heroName.split("'")[0]}
           <motion.span
             className="gradient-text animate-gradient-shift inline-block"
             style={{ backgroundImage: "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary)))", backgroundSize: "200% 200%", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            Gulira'no
+            {t.heroName}
           </motion.span>
           <motion.span
             className="inline-block text-primary ml-1"
@@ -91,7 +91,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-4"
         >
-          Creative Developer crafting modern and user-friendly experiences
+          {t.heroTagline}
         </motion.p>
 
         <motion.p
@@ -100,7 +100,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-base text-muted-foreground/80 max-w-lg mx-auto mb-10"
         >
-          I design and build beautiful, functional websites that make a lasting impression.
+          {t.heroIntro}
         </motion.p>
 
         <motion.div
@@ -113,7 +113,7 @@ const HeroSection = () => {
             <Button asChild size="lg" className="rounded-full px-8 font-body">
               <a href="#projects">
                 <ArrowDown size={16} className="mr-2" />
-                View My Projects
+                {t.heroBtn1}
               </a>
             </Button>
           </motion.div>
@@ -121,13 +121,12 @@ const HeroSection = () => {
             <Button asChild variant="outline" size="lg" className="rounded-full px-8 font-body border-primary/30 hover:bg-primary/5">
               <a href="#contact">
                 <Send size={16} className="mr-2" />
-                Get In Touch
+                {t.heroBtn2}
               </a>
             </Button>
           </motion.div>
         </motion.div>
 
-        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
