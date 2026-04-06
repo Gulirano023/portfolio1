@@ -78,7 +78,9 @@ const HeroSection = () => {
             Gulira'no
           </motion.span>
           <motion.span
-            className="inline-block animate-typing-cursor text-primary ml-1"
+            className="inline-block text-primary ml-1"
+            animate={{ opacity: [1, 0, 1] }}
+            transition={{ duration: 1, repeat: Infinity, ease: "steps(2)" }}
             aria-hidden
           >|</motion.span>
         </motion.h1>
