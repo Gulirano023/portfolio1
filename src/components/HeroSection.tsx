@@ -80,7 +80,7 @@ const HeroSection = () => {
           <motion.span
             className="inline-block text-primary ml-1"
             animate={{ opacity: [1, 0, 1] }}
-            transition={{ duration: 1, repeat: Infinity, ease: "steps(2)" }}
+            transition={{ duration: 1, repeat: Infinity, repeatType: "loop" as const }}
             aria-hidden
           >|</motion.span>
         </motion.h1>
