@@ -75,7 +75,7 @@ const HeroSection = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            {t.heroName}
+            Jumanazarova {t.heroName}
           </motion.span>
           <motion.span
             className="inline-block text-primary ml-1"
