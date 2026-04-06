@@ -25,7 +25,7 @@ const ContactSection = () => {
   const socials = [
     { icon: Github, href: "https://github.com", label: "GitHub" },
     { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: MessageCircle, href: "https://t.me/", label: "Telegram" },
+    { icon: MessageCircle, href: "https://t.me/jmnzrva23", label: "Telegram" },
   ];
 
   return (
@@ -117,8 +117,8 @@ const ContactSection = () => {
               </motion.div>
               <span className="text-sm font-medium text-foreground">{t.email}</span>
             </div>
-            <a href="mailto:gulirano@example.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              gulirano@example.com
+            <a href="mailto:jumanazarovarano023@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              jumanazarovarano023@gmail.com
             </a>
           </motion.div>
 
