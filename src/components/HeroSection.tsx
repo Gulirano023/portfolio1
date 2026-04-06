@@ -68,14 +68,13 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.15, type: "spring", stiffness: 100 }}
           className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-tight mb-6"
         >
-          {t.heroName.split("'")[0]}
           <motion.span
             className="gradient-text animate-gradient-shift inline-block"
             style={{ backgroundImage: "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary)))", backgroundSize: "200% 200%", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            Jumanazarova {t.heroName}
+            Jumanazarova Gulira'no
           </motion.span>
           <motion.span
             className="inline-block text-primary ml-1"
