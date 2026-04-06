@@ -50,7 +50,7 @@ const AboutSection = () => (
         transition={{ duration: 0.8, delay: 0.2 }}
         className="text-muted-foreground max-w-2xl text-lg leading-relaxed mb-12"
       >
-        Hello! I'm <span className="text-foreground font-medium">Gulirano Jumanazarova</span> — a passionate
+        Hello! I'm <span className="text-foreground font-medium">Gulira'no Jumanazarova</span> — a passionate
         and ambitious developer who enjoys creating modern, user-friendly, and visually
         appealing digital products. I'm dedicated to continuous learning and love
         exploring the intersection of technology and design to build experiences
