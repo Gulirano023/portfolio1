@@ -75,7 +75,7 @@ const HeroSection = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            Gulirano
+            Gulira'no
           </motion.span>
           <motion.span
             className="inline-block animate-typing-cursor text-primary ml-1"
