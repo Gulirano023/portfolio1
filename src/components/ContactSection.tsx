@@ -5,18 +5,20 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
-      toast({ title: "Please fill in all fields", variant: "destructive" });
+      toast({ title: t.fillAll, variant: "destructive" });
       return;
     }
-    toast({ title: "Message sent! ✨", description: "Thanks for reaching out. I'll get back to you soon." });
+    toast({ title: t.messageSent, description: t.messageSentDesc });
     setForm({ name: "", email: "", message: "" });
   };
 
@@ -35,9 +37,9 @@ const ContactSection = () => {
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <p className="text-sm font-medium tracking-widest uppercase text-primary mb-2">Contact</p>
+        <p className="text-sm font-medium tracking-widest uppercase text-primary mb-2">{t.contactLabel}</p>
         <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground">
-          Let's connect.
+          {t.contactTitle}
         </h2>
       </motion.div>
 
@@ -51,8 +53,8 @@ const ContactSection = () => {
           className="space-y-4"
         >
           {[
-            { placeholder: "Your name", key: "name" as const, type: "text", max: 100 },
-            { placeholder: "Your email", key: "email" as const, type: "email", max: 255 },
+            { placeholder: t.yourName, key: "name" as const, type: "text", max: 100 },
+            { placeholder: t.yourEmail, key: "email" as const, type: "email", max: 255 },
           ].map((field, i) => (
             <motion.div
               key={field.key}
@@ -80,7 +82,7 @@ const ContactSection = () => {
             whileHover={{ scale: 1.01 }}
           >
             <Textarea
-              placeholder="Your message"
+              placeholder={t.yourMessage}
               rows={5}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -90,7 +92,7 @@ const ContactSection = () => {
           </motion.div>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button type="submit" size="lg" className="rounded-full px-8 font-body">
-              <Send size={16} className="mr-2" /> Send Message
+              <Send size={16} className="mr-2" /> {t.sendMessage}
             </Button>
           </motion.div>
         </motion.form>
@@ -113,14 +115,14 @@ const ContactSection = () => {
               >
                 <Mail size={18} className="text-primary" />
               </motion.div>
-              <span className="text-sm font-medium text-foreground">Email</span>
+              <span className="text-sm font-medium text-foreground">{t.email}</span>
             </div>
             <a href="mailto:gulirano@example.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               gulirano@example.com
             </a>
           </motion.div>
 
-          <p className="text-sm text-muted-foreground mb-3">Find me on social media</p>
+          <p className="text-sm text-muted-foreground mb-3">{t.findMe}</p>
           <div className="flex gap-3">
             {socials.map((s, i) => (
               <motion.a
