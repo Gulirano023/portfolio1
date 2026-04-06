@@ -34,7 +34,7 @@ const translations = {
 
     // Skills
     skillsLabel: "Ko'nikmalar",
-    skillsTitle: "Mening asboblarim.",
+    skillsTitle: "Mening ko'nikmalarim.",
 
     // Projects
     projectsLabel: "Loyihalar",
