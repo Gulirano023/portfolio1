@@ -169,7 +169,7 @@ const translations = {
   },
 } as const;
 
-type Translations = typeof translations.uz;
+type Translations = Record<keyof typeof translations.uz, string>;
 
 interface LanguageContextType {
   lang: Lang;
