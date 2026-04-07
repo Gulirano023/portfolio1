@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Lightbulb, Eye, Rocket, Heart, GraduationCap, Award } from "lucide-react";
+import { Lightbulb, Eye, Rocket, Heart, GraduationCap } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const containerVariants = {
@@ -62,7 +62,7 @@ const AboutSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.5 }}
-        className="grid md:grid-cols-2 gap-5 mb-8"
+        className="mb-8"
       >
         <div className="glass-card p-6">
           <div className="flex items-center gap-3 mb-3">
@@ -73,24 +73,6 @@ const AboutSection = () => {
             Men hozirda Yangiariq tumanidagi 3-son maktabda o'qib kelmoqdaman.
             Shuningdek, 2 yildan beri Al-Xorazmiy vorislari loyihasida IT sohasida bilim olib bormoqdaman.
           </p>
-        </div>
-
-        <div className="glass-card p-6">
-          <div className="flex items-center gap-3 mb-3">
-            <Award size={20} className="text-primary" />
-            <h3 className="font-heading text-xl font-semibold text-foreground">Sertifikatlarim va yutuqlarim</h3>
-          </div>
-          <p className="text-muted-foreground leading-relaxed mb-3">
-            IT bo'yicha 3-4 ta sertifikatim bor. Coursera sertifikatimni quyidagi havola orqali ko'rishingiz mumkin:
-          </p>
-          <a
-            href="https://coursera.org/share/5aebfc0425f5363b16ea9ebe2100d8bc"
-            target="_blank"
-            rel="noreferrer"
-            className="text-primary underline underline-offset-4 break-all"
-          >
-            https://coursera.org/share/5aebfc0425f5363b16ea9ebe2100d8bc
-          </a>
         </div>
       </motion.div>
 

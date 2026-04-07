@@ -6,6 +6,7 @@ const translations = {
   uz: {
     // Nav
     about: "Men haqimda",
+    certificates: "Sertifikatlar",
     skills: "Ko'nikmalar",
     projects: "Loyihalar",
     experience: "Tajriba",
@@ -88,6 +89,7 @@ const translations = {
   ru: {
     // Nav
     about: "Обо мне",
+    certificates: "Сертификаты",
     skills: "Навыки",
     projects: "Проекты",
     experience: "Опыт",
