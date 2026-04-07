@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Send, Github, Linkedin, MessageCircle } from "lucide-react";
+import { Mail, Send, Github, Instagram, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -23,8 +23,8 @@ const ContactSection = () => {
   };
 
   const socials = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/jumanazarovagulirano62", label: "GitHub" },
+    { icon: Instagram, href: "https://instagram.com/_.rxmtllyva", label: "Instagram" },
     { icon: MessageCircle, href: "https://t.me/jmnzrva23", label: "Telegram" },
   ];
 
@@ -108,18 +108,25 @@ const ContactSection = () => {
             whileHover={{ scale: 1.02, boxShadow: "0 15px 30px -10px hsl(var(--primary) / 0.1)" }}
             className="glass-card p-6 mb-6"
           >
-            <div className="flex items-center gap-3 mb-2">
-              <motion.div
-                animate={{ rotate: [0, 5, -5, 0] }}
-                transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
-              >
-                <Mail size={18} className="text-primary" />
-              </motion.div>
-              <span className="text-sm font-medium text-foreground">{t.email}</span>
+            <h3 className="font-heading text-xl font-semibold text-foreground mb-4">Men bilan bog'lanish</h3>
+            <div className="grid gap-3 text-muted-foreground">
+              <a href="mailto:jumanazarovarano023@gmail.com" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
+                <Mail size={16} className="text-primary" />
+                jumanazarovarano023@gmail.com
+              </a>
+              <a href="https://github.com/jumanazarovagulirano62" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
+                <Github size={16} className="text-primary" />
+                github.com/jumanazarovagulirano62
+              </a>
+              <a href="https://instagram.com/_.rxmtllyva" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
+                <Instagram size={16} className="text-primary" />
+                @_.rxmtllyva
+              </a>
+              <a href="https://t.me/jmnzrva23" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
+                <MessageCircle size={16} className="text-primary" />
+                @jmnzrva23
+              </a>
             </div>
-            <a href="mailto:jumanazarovarano023@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              jumanazarovarano023@gmail.com
-            </a>
           </motion.div>
 
           <p className="text-sm text-muted-foreground mb-3">{t.findMe}</p>
