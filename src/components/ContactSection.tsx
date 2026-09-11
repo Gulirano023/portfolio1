@@ -7,25 +7,53 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+const EMAIL = "jumanazarovagulirano62@gmail.com";
+const GITHUB_URL = "https://github.com/jumanazarovagulirano62";
+const INSTAGRAM_URL = "https://instagram.com/jmnzrva.r";
+const TELEGRAM_URL = "https://t.me/Jmnzrvam23";
+
 const ContactSection = () => {
   const { toast } = useToast();
   const { t } = useLanguage();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       toast({ title: t.fillAll, variant: "destructive" });
       return;
     }
-    toast({ title: t.messageSent, description: t.messageSentDesc });
-    setForm({ name: "", email: "", message: "" });
+
+    setSending(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        throw new Error("contact failed");
+      }
+
+      toast({ title: t.messageSent, description: t.messageSentDesc });
+      setForm({ name: "", email: "", message: "" });
+    } catch {
+      toast({
+        title: t.messageFailed,
+        description: t.messageFailedDesc,
+        variant: "destructive",
+      });
+    } finally {
+      setSending(false);
+    }
   };
 
   const socials = [
-    { icon: Github, href: "https://github.com/jumanazarovagulirano62", label: "GitHub" },
-    { icon: Instagram, href: "https://instagram.com/_.rxmtllyva", label: "Instagram" },
-    { icon: MessageCircle, href: "https://t.me/jmnzrva23", label: "Telegram" },
+    { icon: Github, href: GITHUB_URL, label: "GitHub" },
+    { icon: Instagram, href: INSTAGRAM_URL, label: "Instagram" },
+    { icon: MessageCircle, href: TELEGRAM_URL, label: "Telegram" },
   ];
 
   return (
@@ -91,8 +119,8 @@ const ContactSection = () => {
             />
           </motion.div>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button type="submit" size="lg" className="rounded-full px-8 font-body">
-              <Send size={16} className="mr-2" /> {t.sendMessage}
+            <Button type="submit" size="lg" className="rounded-full px-8 font-body" disabled={sending}>
+              <Send size={16} className="mr-2" /> {sending ? t.sending : t.sendMessage}
             </Button>
           </motion.div>
         </motion.form>
@@ -108,23 +136,23 @@ const ContactSection = () => {
             whileHover={{ scale: 1.02, boxShadow: "0 15px 30px -10px hsl(var(--primary) / 0.1)" }}
             className="glass-card p-6 mb-6"
           >
-            <h3 className="font-heading text-xl font-semibold text-foreground mb-4">Men bilan bog'lanish</h3>
+            <h3 className="font-heading text-xl font-semibold text-foreground mb-4">{t.contactMeTitle}</h3>
             <div className="grid gap-3 text-muted-foreground">
-              <a href="mailto:jumanazarovarano023@gmail.com" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
+              <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 text-sm hover:text-primary transition-colors break-all">
                 <Mail size={16} className="text-primary" />
-                jumanazarovarano023@gmail.com
+                {EMAIL}
               </a>
-              <a href="https://github.com/jumanazarovagulirano62" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
+              <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
                 <Github size={16} className="text-primary" />
                 github.com/jumanazarovagulirano62
               </a>
-              <a href="https://instagram.com/_.rxmtllyva" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
                 <Instagram size={16} className="text-primary" />
-                @_.rxmtllyva
+                @jmnzrva.r
               </a>
-              <a href="https://t.me/jmnzrva23" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
+              <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
                 <MessageCircle size={16} className="text-primary" />
-                @jmnzrva23
+                @Jmnzrvam23
               </a>
             </div>
           </motion.div>

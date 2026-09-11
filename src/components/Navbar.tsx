@@ -5,7 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(() => document.documentElement.classList.contains("dark"));
   const [mobileOpen, setMobileOpen] = useState(false);
   const { lang, setLang, t } = useLanguage();
 
@@ -20,10 +20,9 @@ const Navbar = () => {
 
   useEffect(() => {
     const saved = localStorage.getItem("theme");
-    if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-      setDark(true);
-      document.documentElement.classList.add("dark");
-    }
+    const shouldBeDark = saved === "light" ? false : true;
+    document.documentElement.classList.toggle("dark", shouldBeDark);
+    setDark(shouldBeDark);
   }, []);
 
   useEffect(() => {

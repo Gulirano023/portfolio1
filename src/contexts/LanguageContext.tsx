@@ -15,6 +15,7 @@ const translations = {
     // Hero
     heroTag: "Kreativ Dasturchi",
     heroName: "Gulira'no",
+    heroFullName: "Jumanazarova Gulira'no",
     heroTagline: "Zamonaviy va qulay veb-tajribalar yaratuvchi kreativ dasturchi",
     heroIntro: "Men chiroyli, funksional veb-saytlarni loyihalayman va yarataman.",
     heroBtn1: "Loyihalarimni ko'rish",
@@ -23,6 +24,10 @@ const translations = {
     // About
     aboutLabel: "Men haqimda",
     aboutTitle: "Dizayn va texnologiyaga\nishtiyoqmand.",
+    aboutIntro: `Salom. Men Jumanazarova Gulira'no — IT va Kiberxavfsizlik yo'nalishida o'qiyotgan yosh mutaxassisman. IT sohasida o'zimni muntazam rivojlantirib boraman va bir nechta sertifikatlarga egaman.`,
+    aboutEduTitle: "Ta'lim va bilim",
+    aboutEduDesc: "Men hozirda Yangiariq tumanidagi 3-son maktabda o'qib kelmoqdaman. Shuningdek, 2 yildan beri Al-Xorazmiy vorislari loyihasida IT sohasida bilim olib bormoqdaman.",
+    aboutSkillsTitle: "Ko'nikmalar va texnologiyalar",
     aboutDesc: `Salom! Men Gulira'no Jumanazarova — zamonaviy, foydalanuvchilarga qulay va vizual jihatdan chiroyli raqamli mahsulotlar yaratishni yaxshi ko'radigan ishtiyoqli va ambitsiyali dasturchiman. Men doimiy o'rganishga bag'ishlanganman va foydalanuvchilarga haqiqiy ta'sir qiladigan tajribalar yaratish uchun texnologiya va dizayn kesishmasini o'rganishni yaxshi ko'raman.`,
     strengthCreativity: "Ijodkorlik",
     strengthCreativityDesc: "Har bir loyihaga yangi g'oyalar va noyob vizual yechimlar olib kelaman.",
@@ -37,9 +42,17 @@ const translations = {
     skillsLabel: "Ko'nikmalar",
     skillsTitle: "Mening ko'nikmalarim.",
 
+    // Certificates
+    certTitle: "Sertifikatlarim va yutuqlarim",
+    certIntro: "IT sohasida bir nechta sertifikatlarga egaman. Quyida asosiy sertifikatlarimdan biri keltirilgan.",
+    certVerified: "Tasdiqlangan sertifikat",
+    certDate: "Sana",
+    certView: "Sertifikatni ko'rish",
+
     // Projects
     projectsLabel: "Loyihalar",
     projectsTitle: "Tanlangan ishlar.",
+    featured: "Asosiy loyiha",
     liveDemo: "Jonli demo",
     code: "Kod",
     proj1Title: "Portfolio veb-sayti",
@@ -52,6 +65,7 @@ const translations = {
     proj4Desc: "Xayoliy brendlar uchun zamonaviy, sezgir landing sahifalar seriyasi — maket, tipografiya va vizual ierarxiyaga e'tibor.",
     proj5Title: "Viktorina ilovasi",
     proj5Desc: "Ko'p toifali, ball kuzatuvi va vaqt belgilangan savollar bilan interaktiv viktorina o'yini.",
+    projDehqonDesc: "Sun'iy intellekt texnologiyalariga asoslangan zamonaviy qishloq xo'jaligi platformasi.",
 
     // Experience
     expLabel: "Tajriba",
@@ -72,13 +86,17 @@ const translations = {
     // Contact
     contactLabel: "Aloqa",
     contactTitle: "Bog'lanamiz.",
+    contactMeTitle: "Men bilan bog'lanish",
     yourName: "Ismingiz",
     yourEmail: "Emailingiz",
     yourMessage: "Xabaringiz",
     sendMessage: "Xabar yuborish",
+    sending: "Yuborilmoqda...",
     fillAll: "Iltimos, barcha maydonlarni to'ldiring",
     messageSent: "Xabar yuborildi! ✨",
     messageSentDesc: "Murojaat uchun rahmat. Tez orada javob beraman.",
+    messageFailed: "Xabar yuborilmadi",
+    messageFailedDesc: "Serverga ulanishda muammo. Iltimos, to'g'ridan-to'g'ri email orqali yozing.",
     findMe: "Meni ijtimoiy tarmoqlarda toping",
     email: "Email",
 
@@ -98,6 +116,7 @@ const translations = {
     // Hero
     heroTag: "Креативный разработчик",
     heroName: "Gulira'no",
+    heroFullName: "Jumanazarova Gulira'no",
     heroTagline: "Креативный разработчик, создающий современные и удобные веб-приложения",
     heroIntro: "Я проектирую и создаю красивые, функциональные сайты.",
     heroBtn1: "Мои проекты",
@@ -106,6 +125,10 @@ const translations = {
     // About
     aboutLabel: "Обо мне",
     aboutTitle: "Увлечена дизайном\nи технологиями.",
+    aboutIntro: `Привет. Я Гулирано Джуманазарова — молодой специалист, обучающийся по направлению IT и кибербезопасности. Постоянно развиваюсь в IT-сфере и имею несколько сертификатов.`,
+    aboutEduTitle: "Образование и знания",
+    aboutEduDesc: "Сейчас я учусь в школе №3 Янгиарыкского района. Уже 2 года получаю знания в сфере IT в рамках проекта «Наследники Аль-Хорезми».",
+    aboutSkillsTitle: "Навыки и технологии",
     aboutDesc: `Привет! Я Gulira'no Jumanazarova — увлечённый и амбициозный разработчик, который любит создавать современные, удобные и визуально привлекательные цифровые продукты. Я стремлюсь к постоянному обучению и люблю исследовать пересечение технологий и дизайна.`,
     strengthCreativity: "Креативность",
     strengthCreativityDesc: "Привношу свежие идеи и уникальные визуальные решения в каждый проект.",
@@ -120,9 +143,17 @@ const translations = {
     skillsLabel: "Навыки",
     skillsTitle: "Мой инструментарий.",
 
+    // Certificates
+    certTitle: "Мои сертификаты и достижения",
+    certIntro: "У меня есть несколько сертификатов в сфере IT. Ниже представлен один из основных сертификатов.",
+    certVerified: "Подтверждённый сертификат",
+    certDate: "Дата",
+    certView: "Посмотреть сертификат",
+
     // Projects
     projectsLabel: "Проекты",
     projectsTitle: "Избранные работы.",
+    featured: "Главный проект",
     liveDemo: "Демо",
     code: "Код",
     proj1Title: "Сайт-портфолио",
@@ -135,6 +166,7 @@ const translations = {
     proj4Desc: "Серия современных, адаптивных лендингов для вымышленных брендов с фокусом на типографику.",
     proj5Title: "Приложение-викторина",
     proj5Desc: "Интерактивная викторина с несколькими категориями, подсчётом баллов и ограничением по времени.",
+    projDehqonDesc: "Современная агроплатформа на основе технологий искусственного интеллекта.",
 
     // Experience
     expLabel: "Опыт",
@@ -155,13 +187,17 @@ const translations = {
     // Contact
     contactLabel: "Контакт",
     contactTitle: "Свяжемся.",
+    contactMeTitle: "Связаться со мной",
     yourName: "Ваше имя",
     yourEmail: "Ваш email",
     yourMessage: "Ваше сообщение",
     sendMessage: "Отправить",
+    sending: "Отправляется...",
     fillAll: "Пожалуйста, заполните все поля",
     messageSent: "Сообщение отправлено! ✨",
     messageSentDesc: "Спасибо за обращение. Я свяжусь с вами в ближайшее время.",
+    messageFailed: "Сообщение не отправлено",
+    messageFailedDesc: "Проблема с подключением к серверу. Пожалуйста, напишите напрямую на email.",
     findMe: "Найдите меня в соцсетях",
     email: "Почта",
 

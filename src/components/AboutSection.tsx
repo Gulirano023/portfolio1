@@ -43,7 +43,7 @@ const AboutSection = () => {
           {t.aboutLabel}
         </motion.p>
         <h2 className="font-heading text-4xl md:text-6xl font-bold text-foreground mb-6 whitespace-pre-line">
-          Men haqimda
+          {t.aboutTitle}
         </h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -52,8 +52,7 @@ const AboutSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-muted-foreground max-w-2xl text-lg leading-relaxed mb-12"
         >
-          Salom. Men Jumanzarova Gulira'no - IT va Kiberxavfsizlik yo'nalishida o'qiyotgan yosh mutaxassisman.
-          IT sohasida o'zimni muntazam rivojlantirib boraman va bir nechta sertifikatlarga egaman.
+          {t.aboutIntro}
         </motion.p>
       </motion.div>
 
@@ -67,11 +66,10 @@ const AboutSection = () => {
         <div className="glass-card p-6">
           <div className="flex items-center gap-3 mb-3">
             <GraduationCap size={20} className="text-primary" />
-            <h3 className="font-heading text-xl font-semibold text-foreground">Ta'lim va bilim</h3>
+            <h3 className="font-heading text-xl font-semibold text-foreground">{t.aboutEduTitle}</h3>
           </div>
           <p className="text-muted-foreground leading-relaxed">
-            Men hozirda Yangiariq tumanidagi 3-son maktabda o'qib kelmoqdaman.
-            Shuningdek, 2 yildan beri Al-Xorazmiy vorislari loyihasida IT sohasida bilim olib bormoqdaman.
+            {t.aboutEduDesc}
           </p>
         </div>
       </motion.div>
@@ -83,7 +81,7 @@ const AboutSection = () => {
         transition={{ duration: 0.6 }}
         className="glass-card p-6 mb-8"
       >
-        <h3 className="font-heading text-xl font-semibold text-foreground mb-3">Ko'nikmalar va texnologiyalar</h3>
+        <h3 className="font-heading text-xl font-semibold text-foreground mb-3">{t.aboutSkillsTitle}</h3>
         <div className="flex flex-wrap gap-2">
           {["IT Fundamentals", "Kiberxavfsizlik", "Generative AI", "Google Cloud", "Portfolio Development", "Problem Solving"].map((skill) => (
             <span key={skill} className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-sm text-foreground">
