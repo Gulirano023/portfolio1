@@ -1,0 +1,11 @@
+# This file tells Netlify which site this project is linked to.
+# Once linked, you can update this file with: netlify link
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
