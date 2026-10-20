@@ -3,7 +3,7 @@ import { ExternalLink, Github, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const GITHUB_URL = "https://github.com/jumanazarovagulirano62";
+const GITHUB_URL = "https://github.com/Gulirano023";
 const DEHQON_DEMO = "https://dehqon-loyiha1-w6u4.vercel.app/";
 
 const containerVariants = {

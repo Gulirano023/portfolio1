@@ -8,7 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const EMAIL = "jumanazarovagulirano62@gmail.com";
-const GITHUB_URL = "https://github.com/jumanazarovagulirano62";
+const GITHUB_URL = "https://github.com/Gulirano023";
 const INSTAGRAM_URL = "https://instagram.com/jmnzrva.r";
 const TELEGRAM_URL = "https://t.me/Jmnzrvam23";
 
@@ -144,7 +144,7 @@ const ContactSection = () => {
               </a>
               <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
                 <Github size={16} className="text-primary" />
-                github.com/jumanazarovagulirano62
+                github.com/Gulirano023
               </a>
               <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm hover:text-primary transition-colors">
                 <Instagram size={16} className="text-primary" />
